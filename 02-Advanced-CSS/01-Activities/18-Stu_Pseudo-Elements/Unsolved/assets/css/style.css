@@ -61,6 +61,8 @@ article p {
 
 /* TODO: Style the term/phrase - underline, black text, grab cursor */
 
+
+
 /* TODO: Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
 
 aside {
@@ -106,6 +108,28 @@ footer {
 
 .links a:hover {
   text-decoration: underline;
+}
+
+span[data-descr]{
+  text-decoration:underline;
+  cursor:grab;
+  color: darkblue;
+  position:relative;
+}
+
+span[data-descr]:hover::after{
+  content: attr(data-descr);
+  background-color: darkblue;
+  border: 1px;
+  color:white;
+  position:absolute;
+  width:200px;
+  left:0;
+  top:-25px;
+  border-radius:10px;
+  padding:10px;
+  font-size:70%;
+  z-index:1;
 }
 
 @media screen and (max-width: 768px) {
